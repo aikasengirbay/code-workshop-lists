@@ -23,6 +23,18 @@ def view_list(my_list):
 
 
 
+def edit_list(my_list):
+    """Gives option to edit/delete items the list"""
+    for items in my_list:
+        print items
+    delete_item = raw_input("which item number in the list you would like remove? ")
+    delete_item = my_list.index(delete_item)
+    # delete_item = int(delete_item)
+
+    my_list.pop(delete_item) 
+    print my_list
+
+
 
 def display_main_menu(my_list):
     """Displays main options, takes in user input, and calls view or add function."""
@@ -31,6 +43,7 @@ def display_main_menu(my_list):
     A. Add a new item
     B. View list
     C. Quit the program
+    D. Edit the list
     >>> """
    
 
@@ -41,10 +54,12 @@ def display_main_menu(my_list):
             add_to_list(my_list)  
         elif answer == "B":
             view_list(my_list)
+        elif answer == "D":
+            edit_list(my_list)
         elif answer == "C":
             break
 
 #-------------------------------------------------
 
-my_list = []
+my_list = ["The ToDo List:","Delete","Walk", "Drink", "Eat"]
 display_main_menu(my_list)
