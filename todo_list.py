@@ -24,19 +24,24 @@ def view_list(my_list):
 def display_main_menu(my_list):
     """Displays main options, takes in user input, and calls view or add function."""
 
-    user_options = """
-    \nWould you like to:
+    user_options = """Would you like to
     A. Add a new item
     B. View list
     C. Quit the program
     >>> """
+   
 
     while True:
+        answer = raw_input(user_options)
         # Collect input and include your if/elif/else statements here.
-        break
+        if answer == "A":
+            add_to_list(my_list)  
+        elif answer == "B":
+            view_list(my_list)
+        elif answer == "C":
+            break
 
 #-------------------------------------------------
 
 my_list = []
 display_main_menu(my_list)
-
